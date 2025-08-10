@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Homework 5 at JavaScript" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>JS HW 5</title>
+    <script src="./js/task-1.js"></script>
+    <script src="./js/task-2.js"></script>
+    <script src="./js/task-3.js"></script>
+    <script src="./js/task-4.js"></script>
+  </head>
+  <body style="background-color: aliceblue">
+    <h1
+      style="
+        text-align: center;
+        letter-spacing: 0.2em;
+        font-size: 62px;
+        background-color: yellow;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        border-radius: 4px;
+      "
+    >
+      Java Script HW5
+    </h1>
+    <p
+      style="
+        margin: 0 auto;
+        margin-bottom: 10px;
+        max-width: 200px;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        font-size: 32px;
+        background-color: transparent;
+        transform: translateX(-350px);
+      "
+    >
+      Console log:
+    </p>
+    <div
+      id="log-output"
+      style="
+        width: 900px;
+        height: 600px;
+        background-color: rgba(255, 255, 0, 0.185);
+        margin: 0 auto;
+        margin-bottom: 25px;
+        border: 3px solid rgba(196, 14, 14, 0.767);
+        border-radius: 10px;
+        color: black;
+        font-weight: 500;
+        padding: 10px 20px;
+        overflow: auto;
+        letter-spacing: 0.1em;
+        font-family: 'Oswald', sans-serif;
+      "
+    ></div>
+    <script>
+      const originalLog = console.log;
+
+      console.log = function (message) {
+        originalLog(message);
+        const output = document.getElementById('log-output');
+        const p = document.createElement('p');
+        p.textContent = message;
+        output.appendChild(p);
+      };
+    </script>
+  </body>
+</html>
