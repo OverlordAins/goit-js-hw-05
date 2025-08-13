@@ -1,5 +1,5 @@
-const getUserNames = (users) => users.map(user => user.name)
 console.log('TASK-1')
+const getUserNames = (users) => users.map(user => user.name)
 console.log(
   getUserNames([
   {

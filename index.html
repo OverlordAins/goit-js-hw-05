@@ -82,8 +82,8 @@
         output.appendChild(p);
       };
 
-      const ada = users => users.map(user => user.name);
       console.log('TASK-1');
+      const ada = users => users.map(user => user.name);
       console.log(
         ada([
           {
@@ -125,9 +125,9 @@
       ); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
       console.log('---');
 
+      console.log('TASK-2');
       const UsersWithFriend = (users, friendName) =>
         users.filter(user => user.friends.includes(friendName));
-      console.log('TASK-2');
       const Users = [
         {
           name: 'Moore Hensley',
@@ -184,6 +184,100 @@
       // ]
 
       console.log(UsersWithFriend(Users, 'Adrian Cross')); // []
+      console.log('---');
+
+      console.log('TASK-3');
+      const ByDescendingFriendCount = users => {
+        return users.toSorted((a, b) => b.friends.length - a.friends.length);
+      };
+      console.log(
+        ByDescendingFriendCount([
+          {
+            name: 'Moore Hensley',
+            friends: ['Sharron Pace'],
+            gender: 'male',
+          },
+          {
+            name: 'Sharlene Bush',
+            friends: ['Briana Decker', 'Sharron Pace'],
+            gender: 'female',
+          },
+          {
+            name: 'Ross Vazquez',
+            friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+            gender: 'male',
+          },
+          {
+            name: 'Elma Head',
+            friends: ['Goldie Gentry', 'Aisha Tran'],
+            gender: 'female',
+          },
+          {
+            name: 'Carey Barr',
+            friends: ['Jordan Sampson', 'Eddie Strong'],
+            gender: 'male',
+          },
+          {
+            name: 'Blackburn Dotson',
+            friends: ['Jacklyn Lucas', 'Linda Chapman'],
+            gender: 'male',
+          },
+          {
+            name: 'Sheree Anthony',
+            friends: ['Goldie Gentry', 'Briana Decker'],
+            gender: 'female',
+          },
+        ])
+      );
+      console.log('---');
+
+      console.log('TASK-4');
+      const TotalBalanceByGender = (users, gender) => {
+        return users
+          .filter(user => user.gender === gender)
+          .reduce((total, user) => total + user.balance, 0);
+      };
+      const lients = [
+        {
+          name: 'Moore Hensley',
+          gender: 'male',
+          balance: 2811,
+        },
+        {
+          name: 'Sharlene Bush',
+          gender: 'female',
+          balance: 3821,
+        },
+        {
+          name: 'Ross Vazquez',
+          gender: 'male',
+          balance: 3793,
+        },
+        {
+          name: 'Elma Head',
+          gender: 'female',
+          balance: 2278,
+        },
+        {
+          name: 'Carey Barr',
+          gender: 'male',
+          balance: 3951,
+        },
+        {
+          name: 'Blackburn Dotson',
+          gender: 'male',
+          balance: 1498,
+        },
+        {
+          name: 'Sheree Anthony',
+          gender: 'female',
+          balance: 2764,
+        },
+      ];
+
+      console.log(TotalBalanceByGender(lients, 'male')); // 12053
+
+      console.log(TotalBalanceByGender(lients, 'female')); // 8863
       console.log('---');
     </script>
   </body>
