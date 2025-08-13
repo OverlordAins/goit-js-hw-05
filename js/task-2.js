@@ -1,5 +1,5 @@
 console.log('TASK-2');
-const getUsersWithFriend = (users, friendName) => users.filter(user => user.friends.includes(friendName));
+const getUsersWithFriend = (users, friendName) => users.filter(user => user.friends.includes(friendName)).map(user=>user.name);
 const allUsers = [
   {
     name: "Moore Hensley",
